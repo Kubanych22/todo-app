@@ -85,16 +85,17 @@ const tableControl = (table, user) => {
     e.preventDefault();
     const target = e.target;
     const tr = target.closest('tr')
+
     if (target.classList.contains('btn-success')) {
       completeTask(tr, user);
     }
-    if (target.classList.contains('btn-secondary')) {
-      const task = table.querySelector('.task')
-      task.setAttribute("contenteditable", "true");
-      task.focus();
-    }
     if (target.classList.contains('btn-danger')) {
       deleteTask(tr, user);
+    }
+    if (target.classList.contains('btn-secondary')) {
+      const task = tr.querySelector('.task')
+      task.setAttribute("contenteditable", 'true');
+      task.focus();
     }
   });
 
@@ -105,7 +106,16 @@ const tableControl = (table, user) => {
     td.classList.replace('task', 'text-decoration-line-through');
     const nextSibling = td.nextSibling;
     nextSibling.textContent = 'выполнено';
-    tr.querySelector('.btn-secondary').remove();
+    const btnEdit = tr.querySelector('.btn-secondary');
+    const btnComplete = tr.querySelector('.btn-success');
+    if (btnEdit !== null) {
+      btnEdit.remove();
+    }
+
+    if (btnComplete !== null) {
+      btnComplete.remove();
+    }
+
     updateLocalStorage(task, user);
   }
 
