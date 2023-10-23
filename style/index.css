@@ -1,0 +1,71 @@
+.modal-form-container {
+  max-width: 400px;
+  width: 100%;
+  margin: 40px auto;
+  opacity: 1;
+  position: fixed;
+  top: 0;
+  visibility: visible;
+  z-index: 1;
+}
+
+.modal-form-container .modal-form {
+  opacity: 1;
+}
+
+.modal-form {
+  padding: 15px 30px 20px 30px;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.45);
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  z-index: 2;
+}
+
+.modal-form-title {
+  font-size: 16px;
+  margin-top: 0;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.modal-form-label {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.modal-form-input {
+  border: 1px solid rgba(0, 0, 0, 0.45);
+  outline: none;
+}
+
+.btn-wrapper {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  column-gap: 20px;
+}
+
+.is-visible {
+  opacity: 0;
+}
+
+.app-container {
+  padding-top: 20px;
+}
+
+.welcome {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.select-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3px;
+}
